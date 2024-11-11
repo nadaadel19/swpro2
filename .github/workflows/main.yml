@@ -11,10 +11,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "printing files before"
-        run: ls
       - uses: actions/checkout@v3
-      - name: "printing files after"
-        run: ls -a
+      - name: "docker login"
+        run: docker login --username ${{secrets.DOCKER_USERNAME}} --password ${{secrets.DOCKER_TOKEN}} 
+      
     
 
